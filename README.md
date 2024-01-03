@@ -3,7 +3,7 @@ mitmProxy for remove HttpOnly in header
 
 ## Install 
 
-`# apt install python3-pip`
+`# apt install python3-pip` <br \>
 `# pip3 install mitmproxy`
 
 ## Modify Tor network
