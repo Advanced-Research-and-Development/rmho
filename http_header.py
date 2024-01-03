@@ -5,5 +5,5 @@ def response(flow: http.HTTPFlow):
     assert flow.response
     cookies = flow.response.cookies
     if "Set-Cookie" in flow.response.headers:
-        flow.response.headers["Set-Cookie"]= flow.response.headers["Set-Cookie"].replace("HttpOnly;","")
+        flow.response.headers["Set-Cookie"]= flow.response.headers["Set-Cookie"].replace("HttpOnly;","").replace("httponly;","").replace("HttpOnly",""),replace("httponly","")
         #print("HTTP : " ,flow.response.headers["Set-Cookie"])
