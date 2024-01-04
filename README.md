@@ -18,6 +18,10 @@ mitmProxy for remove HttpOnly in header
 ## Run
 
 ```
+//mitmproxy as http proxy
 # torsocks mitmdump --mode socks5 -p 8089 -s http_header.py
+or 
+//mitmproxy as socks5 proxy
+# torsocks mitmdump --proxyauth any --mode socks5 -p 8089 -s http_header.py
 ````
 
