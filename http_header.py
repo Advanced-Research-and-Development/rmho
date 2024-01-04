@@ -6,9 +6,12 @@ import re
 
 def response(flow: http.HTTPFlow):
     assert flow.response
-    rex =re.finditer("Set-cookie",flow.response.headers,re.I)
+    # 將標頭轉換為字符串進行正則表達式匹配
+    headers_str = str(flow.response.headers)
+    rex = re.finditer(r"Set-cookie", headers_str, re.I)
     if any(rex) :
         print(flow.response.headers)
+        
         for m in rex :
             flow.response.headers[m.group()] = flow.response.headers[m.group()].replace("httponly;","")
             flow.response.headers[m.group()] = flow.response.headers[m.group()].replace("HttpOnly;","")
