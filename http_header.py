@@ -6,7 +6,6 @@ import re
 
 def response(flow: http.HTTPFlow):
     assert flow.response
-    # 將標頭轉換為字符串進行正則表達式匹配
     headers_str = str(flow.response.headers)
     rex = re.finditer(r"Set-cookie", headers_str, re.I)
     if any(rex) :
