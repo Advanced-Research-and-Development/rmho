@@ -2,6 +2,7 @@ from mitmproxy import http
 from mitmproxy.http import Headers
 from typing import List, Dict
 import json
+import re
 
 def response(flow: http.HTTPFlow):
     assert flow.response
